@@ -10,14 +10,15 @@ namespace Calculadora
     {
         static void Main(string[] args)
         {
-            int i = 0;
-            while (i == 0)
+            bool i = true;
+            while (i == true)
             {
                 menu();
                 int nMenu = int.Parse(Console.ReadLine());
                 i = Operacao(nMenu);
                 Console.Clear();
             }
+            Console.WriteLine("bye!");
             Console.Read();
         }
 
@@ -30,7 +31,7 @@ namespace Calculadora
             Console.WriteLine("Digite qual opção desejada:");
             Console.WriteLine("1- Adição\n2- Subtração\n3- Multiplicação\n4- Divisão\n0- Sair");
         }
-        static int Operacao(int numero)
+        static bool Operacao(int numero)
         {
             int numero1, numero2;
             string simNao, grande;
@@ -39,8 +40,7 @@ namespace Calculadora
                 {
 
                     case 0:
-
-                       return 1;
+                       return false;
 
                     case 1:
                         Console.WriteLine("Digite um número:");
@@ -84,11 +84,11 @@ namespace Calculadora
                 grande = simNao.ToUpper();
                 if (grande == "S" || grande == "SIM")
                 {
-                    return 0;
+                    return true;
                 }
                 else
                 {
-                    return 1;
+                    return false;
                 }
         }
     }
